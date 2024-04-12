@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('api/projects', ProjectController::class)->only(['index', 'show', 'store', 'update', 'destroy']);
+Route::apiResource('projects', ProjectController::class)->except(['edit','create']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
