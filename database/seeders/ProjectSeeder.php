@@ -6,6 +6,7 @@ use App\Models\Project;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+// use Faker\Provider\en_US\Company;
 
 class ProjectSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class ProjectSeeder extends Seeder
     {
         for($i = 0; $i < 20; $i++) {
             $project = new Project;
-            $project->name = $faker->firstName();
+            $project->name = $faker->catchPhrase();
             $project->description = $faker->paragraph(8);
             $project->link = $faker->url();
             $project->type_id = $faker->numberBetween(1,3);
