@@ -44,6 +44,7 @@ class ProjectController extends Controller
         $data = $this->validation($request->all());
         $project = new Project;
         $project->fill($data);
+        // $img_path = Storage::put('uploads', $data['image']); PER IMMAGINI
         $project->save();
         if(Arr::exists($data, "techs")) $project->technologies()->attach($data["techs"]);
 
